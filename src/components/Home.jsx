@@ -126,8 +126,10 @@ const Home = () => {
                         onClose={() => setIsModalOpen(false)}
                         onSubmit={handleAddProduct}
                     />
+                    <ProductDetails />
                 </div>
             </div>
+
         </>
     )
 }
