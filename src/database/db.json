@@ -1,0 +1,204 @@
+{
+    "products": [
+        {
+            "id": "1",
+            "title": "Premium Wireless Headphones",
+            "description": "High-quality noise-canceling headphones with premium sound quality and comfortable design.",
+            "price": 199.99,
+            "rating": 4.8,
+            "thumbnail": "https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg"
+        },
+        {
+            "id": "2",
+            "title": "Ergonomic Office Chair",
+            "description": "Comfortable office chair with lumbar support and adjustable height.",
+            "price": 299.99,
+            "rating": 4.6,
+            "thumbnail": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
+        },
+        {
+            "id": "3",
+            "title": "Smart Fitness Tracker",
+            "description": "Advanced fitness tracker with heart rate monitoring and GPS.",
+            "price": 149.99,
+            "rating": 4.5,
+            "thumbnail": "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?w=400&h=300&fit=crop"
+        },
+        {
+            "id": "4",
+            "title": "4K Ultra HD TV",
+            "description": "55-inch 4K UHD television with HDR and smart streaming capabilities.",
+            "price": 499.99,
+            "rating": 4.7,
+            "thumbnail": "https://images.pexels.com/photos/1444416/pexels-photo-1444416.jpeg"
+        },
+        {
+            "id": "5",
+            "title": "Bluetooth Speaker",
+            "description": "Portable waterproof Bluetooth speaker with deep bass and long battery life.",
+            "price": 89.99,
+            "rating": 4.4,
+            "thumbnail": "https://images.pexels.com/photos/128611/pexels-photo-128611.jpeg"
+        },
+        {
+            "id": "6",
+            "title": "Electric Standing Desk",
+            "description": "Height-adjustable electric desk with memory settings and sturdy frame.",
+            "price": 399.99,
+            "rating": 4.6,
+            "thumbnail": "https://images.pexels.com/photos/389819/pexels-photo-389819.jpeg"
+        },
+        {
+            "id": "7",
+            "title": "Portable Power Bank",
+            "description": "10,000mAh compact power bank with fast charging support.",
+            "price": 29.99,
+            "rating": 4.3,
+            "thumbnail": "https://images.pexels.com/photos/518530/pexels-photo-518530.jpeg"
+        },
+        {
+            "id": "8",
+            "title": "Smart LED Light Bulb",
+            "description": "Wi-Fi-enabled color-changing LED bulb compatible with Alexa and Google Assistant.",
+            "price": 19.99,
+            "rating": 4.2,
+            "thumbnail": "https://images.pexels.com/photos/3946152/pexels-photo-3946152.jpeg"
+        },
+        {
+            "id": "9",
+            "title": "Laptop Cooling Pad",
+            "description": "Silent cooling pad with adjustable angle and dual fans.",
+            "price": 39.99,
+            "rating": 4.1,
+            "thumbnail": "https://images.pexels.com/photos/925786/pexels-photo-925786.jpeg"
+        },
+        {
+            "id": "10",
+            "title": "Gaming Mouse",
+            "description": "RGB gaming mouse with adjustable DPI and programmable buttons.",
+            "price": 49.99,
+            "rating": 4.5,
+            "thumbnail": "https://images.pexels.com/photos/32767988/pexels-photo-32767988.jpeg"
+        },
+        {
+            "id": "11",
+            "title": "Mechanical Keyboard",
+            "description": "Backlit mechanical keyboard with tactile switches and aluminum frame.",
+            "price": 89.99,
+            "rating": 4.6,
+            "thumbnail": "https://images.pexels.com/photos/9072292/pexels-photo-9072292.jpeg"
+        },
+        {
+            "id": "12",
+            "title": "Drone with Camera",
+            "description": "Quadcopter drone with 4K camera, GPS, and auto return feature.",
+            "price": 249.99,
+            "rating": 4.4,
+            "thumbnail": "https://images.pexels.com/photos/9596281/pexels-photo-9596281.jpeg"
+        },
+        {
+            "id": "13",
+            "title": "Smartwatch",
+            "description": "Stylish smartwatch with health tracking, messages, and app notifications.",
+            "price": 179.99,
+            "rating": 4.5,
+            "thumbnail": "https://images.pexels.com/photos/110471/pexels-photo-110471.jpeg"
+        },
+        {
+            "id": "14",
+            "title": "Coffee Maker",
+            "description": "12-cup programmable coffee maker with auto shut-off and reusable filter.",
+            "price": 59.99,
+            "rating": 4.3,
+            "thumbnail": "https://images.pexels.com/photos/324028/pexels-photo-324028.jpeg"
+        },
+        {
+            "id": "15",
+            "title": "Noise-Canceling Earbuds",
+            "description": "Wireless earbuds with ANC, wireless charging case, and touch control.",
+            "price": 129.99,
+            "rating": 4.6,
+            "thumbnail": "https://images.pexels.com/photos/3780681/pexels-photo-3780681.jpeg"
+        },
+        {
+            "id": "16",
+            "title": "Air Purifier",
+            "description": "HEPA air purifier with quiet operation for bedrooms and offices.",
+            "price": 149.99,
+            "rating": 4.4,
+            "thumbnail": "https://images.pexels.com/photos/6915312/pexels-photo-6915312.jpeg"
+        },
+        {
+            "id": "17",
+            "title": "Digital Photo Frame",
+            "description": "Wi-Fi digital frame with auto-rotation and cloud photo storage.",
+            "price": 99.99,
+            "rating": 4.2,
+            "thumbnail": "https://images.pexels.com/photos/2062433/pexels-photo-2062433.jpeg"
+        },
+        {
+            "id": "18",
+            "title": "Electric Toothbrush",
+            "description": "Rechargeable electric toothbrush with multiple brushing modes.",
+            "price": 49.99,
+            "rating": 4.5,
+            "thumbnail": "https://images.pexels.com/photos/29012756/pexels-photo-29012756.jpeg"
+        },
+        {
+            "id": "19",
+            "title": "Compact DSLR Camera",
+            "description": "Beginner-friendly DSLR with 24MP sensor and built-in Wi-Fi.",
+            "price": 399.99,
+            "rating": 4.7,
+            "thumbnail": "https://images.pexels.com/photos/274973/pexels-photo-274973.jpeg"
+        },
+        {
+            "id": "20",
+            "title": "Smart Home Hub",
+            "description": "Centralized smart home controller compatible with Alexa and Google.",
+            "price": 129.99,
+            "rating": 4.3,
+            "thumbnail": "https://images.pexels.com/photos/18186205/pexels-photo-18186205.jpeg"
+        },
+        {
+            "id": "21",
+            "title": "Robot Vacuum Cleaner",
+            "description": "Smart robot vacuum with mapping, scheduling, and voice control.",
+            "price": 229.99,
+            "rating": 4.5,
+            "thumbnail": "https://images.pexels.com/photos/4107248/pexels-photo-4107248.jpeg"
+        },
+        {
+            "id": "22",
+            "title": "Wireless Charging Stand",
+            "description": "Fast wireless charger with ergonomic stand design for desk use.",
+            "price": 34.99,
+            "rating": 4.4,
+            "thumbnail": "https://images.pexels.com/photos/8038323/pexels-photo-8038323.jpeg"
+        },
+        {
+            "id": "23",
+            "title": "Streaming Media Player",
+            "description": "4K streaming device with voice remote and hundreds of apps.",
+            "price": 49.99,
+            "rating": 4.3,
+            "thumbnail": "https://images.pexels.com/photos/30366457/pexels-photo-30366457.jpeg"
+        },
+        {
+            "id": "24",
+            "title": "Adjustable Dumbbells Set",
+            "description": "Space-saving dumbbells with adjustable weight settings.",
+            "price": 199.99,
+            "rating": 4.6,
+            "thumbnail": "https://images.pexels.com/photos/6740822/pexels-photo-6740822.jpeg"
+        },
+        {
+            "id": "25",
+            "title": "Laptop Backpack",
+            "description": "Water-resistant backpack with USB charging port and laptop sleeve.",
+            "price": 59.99,
+            "rating": 4.5,
+            "thumbnail": "https://images.pexels.com/photos/842912/pexels-photo-842912.jpeg"
+        }
+    ]
+}
