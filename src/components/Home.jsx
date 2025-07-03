@@ -4,38 +4,55 @@ import { Plus, Star, StarHalf } from 'lucide-react';
 import AddProductModal from '../components/AddProductModal';
 import ProductCard from '../components/ProductCard';
 import axios from 'axios';
-import { useQuery } from '@tanstack/react-query';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import ProductDetails from './ProductDetails';
+import ProductCardSkeleton from './ProductCardSkeleton';
 
 
-const getProducts = async () => {
-    const response = await axios.get(`http://localhost:8000/products?_page=1&_per_page=6`)
 
-    return response.data
-}
+
 
 const Home = () => {
 
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedProduct, setSelectedProduct] = useState(null);
+    const [page, setPage] = useState(1)
+    const queryClient = useQueryClient()
+
+    const getProducts = async ({ queryKey }) => {
+        const response = await axios.get(`http://localhost:8000/products?_sort=-id&_page=${queryKey[1].page}&_per_page=8`)
+
+        return response.data
+    }
+
 
     const { data: products, isError, isLoading, error } = useQuery({
-        queryKey: ["products"],
+        queryKey: ["products", { page: page }],
         queryFn: getProducts
     })
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [selectedProduct, setSelectedProduct] = useState(null);
+    const mutation = useMutation({
+        mutationFn: (product) => axios.post(`http://localhost:8000/products`, product),
+        onSuccess: () => {
+            queryClient.invalidateQueries(["products"])
+        }
+    })
+
 
     const handleSelectProduct = async (product) => {
         setSelectedProduct(product)
     }
 
     const handleAddProduct = (newProduct) => {
-        const product = {
+
+        mutation.mutate({
             ...newProduct,
-            id: Date.now().toString()
-        };
+            id: Date.now()
+        })
+
         // setProducts(prev => [...prev, product]);
         setIsModalOpen(false);
+
     };
 
     const renderStars = (rating) => {
@@ -57,6 +74,11 @@ const Home = () => {
         );
     };
 
+    const loadingSkeleton = [1, 2, 3, 4, 5, 6, 7, 8].map((item) => {
+        return <ProductCardSkeleton key={item} />
+    })
+
+
     return (
         <>
             <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
@@ -72,7 +94,10 @@ const Home = () => {
                     </div>
 
                     {/* Products Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+
+                        {isLoading && (loadingSkeleton)}
+
                         {products?.data?.length > 0 && products.data.map((product) => (
                             <ProductCard key={product.id} product={product} renderStars={renderStars} handleSelectProduct={() => handleSelectProduct(product)} />
                         ))}
@@ -88,6 +113,22 @@ const Home = () => {
                             <p className="text-gray-600 mb-6">Get started by adding your first product</p>
                         </div>
                     )}
+                    {/* Pagination buttons */}
+
+                    <div className="pagination flex items-center justify-center gap-4">
+
+                        {products?.prev && (
+                            <button className="bg-blue-600 hover:bg-blue-700 text-white cursor-pointer px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200" onClick={() => setPage((prev) => prev - 1)}>
+                                Prev
+                            </button>
+                        )}
+
+                        {products?.next && (
+                            <button className="bg-blue-600 hover:bg-blue-700 text-white cursor-pointer px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200" onClick={() => setPage((prev) => prev + 1)}>
+                                Next
+                            </button>
+                        )}
+                    </div>
 
                     {/* Floating Add Button */}
                     <button
