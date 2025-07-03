@@ -8,41 +8,14 @@ import { useQuery } from '@tanstack/react-query';
 import ProductDetails from './ProductDetails';
 
 
+const getProducts = async () => {
+    const response = await axios.get(`http://localhost:8000/products?_page=1&_per_page=6`)
+
+    return response.data
+}
 
 const Home = () => {
 
-    // const [products, setProducts] = useState([
-    //     {
-    //         id: '1',
-    //         title: 'Premium Wireless Headphones',
-    //         description: 'High-quality noise-canceling headphones with premium sound quality and comfortable design.',
-    //         price: 199.99,
-    //         rating: 4.8,
-    //         thumbnail: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop'
-    //     },
-    //     {
-    //         id: '2',
-    //         title: 'Ergonomic Office Chair',
-    //         description: 'Comfortable office chair with lumbar support and adjustable height.',
-    //         price: 299.99,
-    //         rating: 4.6,
-    //         thumbnail: 'https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop'
-    //     },
-    //     {
-    //         id: '3',
-    //         title: 'Smart Fitness Tracker',
-    //         description: 'Advanced fitness tracker with heart rate monitoring and GPS.',
-    //         price: 149.99,
-    //         rating: 4.5,
-    //         thumbnail: 'https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?w=400&h=300&fit=crop'
-    //     }
-    // ]);
-
-    const getProducts = async () => {
-        const response = await axios.get(`http://localhost:8000/products?_page=1&_per_page=6`)
-
-        return response.data
-    }
 
     const { data: products, isError, isLoading, error } = useQuery({
         queryKey: ["products"],
@@ -50,6 +23,11 @@ const Home = () => {
     })
 
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedProduct, setSelectedProduct] = useState(null);
+
+    const handleSelectProduct = async (product) => {
+        setSelectedProduct(product)
+    }
 
     const handleAddProduct = (newProduct) => {
         const product = {
@@ -86,7 +64,7 @@ const Home = () => {
                     {/* Header */}
                     <div className="text-center mb-16">
                         <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-                            <span className="text-blue-600">ProductHub</span>
+                            <span className="text-blue-600">Product Hub</span>
                         </h1>
                         <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
                             Discover our curated collection of premium products
@@ -96,7 +74,7 @@ const Home = () => {
                     {/* Products Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
                         {products?.data?.length > 0 && products.data.map((product) => (
-                            <ProductCard key={product.id} product={product} renderStars={renderStars} />
+                            <ProductCard key={product.id} product={product} renderStars={renderStars} handleSelectProduct={() => handleSelectProduct(product)} />
                         ))}
                     </div>
 
@@ -126,7 +104,7 @@ const Home = () => {
                         onClose={() => setIsModalOpen(false)}
                         onSubmit={handleAddProduct}
                     />
-                    <ProductDetails />
+                    {selectedProduct && (<ProductDetails setSelectedProduct={setSelectedProduct} selectedProduct={selectedProduct} renderStars={renderStars} />)}
                 </div>
             </div>
 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ProductCard = ({ product, renderStars }) => {
+const ProductCard = ({ product, renderStars, handleSelectProduct }) => {
     return (
         <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group">
             {/* Product Image */}
@@ -31,7 +31,7 @@ const ProductCard = ({ product, renderStars }) => {
                     <span className="text-2xl font-bold text-blue-600">
                         ${product.price.toFixed(2)}
                     </span>
-                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
+                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200" onClick={handleSelectProduct}>
                         View Details
                     </button>
                 </div>
